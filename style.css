@@ -2,7 +2,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40vw;
+    height: 20vw;
+}
+
+.score-board{
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    
+    
 }
 
 .button{
