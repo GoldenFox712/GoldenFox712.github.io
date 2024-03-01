@@ -3,6 +3,19 @@ let computerChoice;
 let playerScore = 0;
 let computerScore = 0;
 
+let getPlayerChoice = function(choice){
+  playerChoice = choice;
+  console.log(playerChoice)
+}
+
+const rockButton = document.getElementById("rock")
+const paperButton = document.getElementById("paper")
+const scissorsButton = document.getElementById("scissors")
+rockButton.addEventListener('click', () => getPlayerChoice("rock"))
+paperButton.addEventListener('click', () => getPlayerChoice("paper"))
+scissorsButton.addEventListener('click', () => getPlayerChoice("scissors"))
+
+
 function getComputerChoice(){
     
     let number =  Math.floor(Math.random() * ((3 - 1) + 1) + 1);
@@ -18,10 +31,7 @@ function getComputerChoice(){
 
 }
 
-function getPlayerChoice(){
-    return window.prompt("Rock, paper, or scissors?").toLowerCase();
 
-}
 
 function playRound(){
         
@@ -42,14 +52,9 @@ function playRound(){
 
       else
       return computerScore++;
-    }
+}
 
 function playGame(){
-
-    
-
-    
-
 
 playRound()
 playRound()
@@ -66,13 +71,12 @@ return "Victory!"
 else if(playerScore < computerScore)
 return "Defeat. Try again!"
 
-
 }
 
 
 
-console.log(playGame())
-console.log(playerScore)
-console.log(computerScore)
-console.log(playerChoice)
-console.log(computerChoice)
+//console.log(playGame())
+//console.log(playerScore)
+//console.log(computerScore)
+//console.log(playerChoice)
+//console.log(computerChoice)
