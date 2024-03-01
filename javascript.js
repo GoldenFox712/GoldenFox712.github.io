@@ -3,9 +3,21 @@ let computerChoice;
 let playerScore = 0;
 let computerScore = 0;
 
+let checkScore = function(){
+  if(playerScore == 5)
+  return alert("Victory")
+
+  else if(computerScore == 5)
+  return alert("Defeat")
+
+  else
+  return
+}
+
 let getPlayerChoice = function(choice){
   playerChoice = choice;
-  console.log(playerChoice)
+  playRound()
+  checkScore()
 }
 
 const rockButton = document.getElementById("rock")
@@ -35,11 +47,14 @@ function getComputerChoice(){
 
 function playRound(){
         
-    playerChoice = getPlayerChoice(playerChoice);
     computerChoice = getComputerChoice();
+    console.log(computerChoice)
+    console.log(playerChoice)
+    console.log(playerScore)
+    console.log(computerScore)
 
     if (computerChoice == playerChoice)
-      return playerScore++, computerScore++;
+      return playerScore, computerScore;
 
     else if (computerChoice == "rock" && playerChoice == "paper")
       return playerScore++;
