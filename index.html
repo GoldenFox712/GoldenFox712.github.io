@@ -8,15 +8,22 @@
 </head>
 <body>
 
+    <h1 class="heading">Rock, Paper, Scissors!</h1>
+    <p class="text">Make a choice; then, computer will choose randomly. <u>Whoever reaches 5 first wins!</u></p>
+
     <div class="score-board">
-        <p>Player score: <span id="player-score"></span></p>
-        <p>Computer score: <span id="computer-score"></span></p>
+        <p>Your score: <span id="player-score">0</span></p>
+        <p>Computer score: <span id="computer-score">0</span></p>
     </div>
 
     <div class="button-container">
         <button class="button" id="rock">Rock</button>
         <button class="button" id="paper">Paper</button>
         <button class="button" id="scissors">Scissors</button>
+    </div>
+
+    <div class="result">
+        <p id="result-message"></p>
     </div>
 
     <script src="javascript.js">

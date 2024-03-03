@@ -3,13 +3,14 @@ let computerChoice;
 let playerScore = 0;
 let computerScore = 0;
 
+
 let checkScore = function(){
-  if(playerScore == 5)
-  return alert("Victory")
-
-  else if(computerScore == 5)
-  return alert("Defeat")
-
+  if(playerScore == 5){
+  return victoryMessage("Victory! :)"); 
+  }  
+  else if(computerScore == 5){
+  return defeatMessage("Defeat :( Refresh to try again!")
+  }  
   else
   return
 }
@@ -17,16 +18,40 @@ let checkScore = function(){
 let getPlayerChoice = function(choice){
   playerChoice = choice;
   playRound()
+  playerScoreBoard.textContent = playerScore
+  computerScoreBoard.textContent = computerScore
   checkScore()
 }
 
 const rockButton = document.getElementById("rock")
 const paperButton = document.getElementById("paper")
 const scissorsButton = document.getElementById("scissors")
+
+const resultMessage = document.querySelector("#result-message")
+
+const playerScoreBoard = document.querySelector("#player-score")
+const computerScoreBoard = document.querySelector("#computer-score")
+
 rockButton.addEventListener('click', () => getPlayerChoice("rock"))
 paperButton.addEventListener('click', () => getPlayerChoice("paper"))
 scissorsButton.addEventListener('click', () => getPlayerChoice("scissors"))
 
+
+let victoryMessage = function(message){
+  resultMessage.textContent = message;
+  resultMessage.className = "victory-style"
+  rockButton.disabled = true
+  paperButton.disabled = true
+  scissorsButton.disabled = true
+}
+
+let defeatMessage = function(message){
+  resultMessage.textContent = message;
+  resultMessage.className = "defeat-style"
+  rockButton.disabled = true
+  paperButton.disabled = true
+  scissorsButton.disabled = true
+}
 
 function getComputerChoice(){
     
@@ -57,16 +82,16 @@ function playRound(){
       return playerScore, computerScore;
 
     else if (computerChoice == "rock" && playerChoice == "paper")
-      return playerScore++;
+      return ++playerScore;
 
     else if (computerChoice == "paper" && playerChoice == "scissors")
-      return playerScore++;
+      return ++playerScore;
 
     else if (computerChoice == "scissors" && playerChoice == "rock")
-      return playerScore++;
+      return ++playerScore;
 
       else
-      return computerScore++;
+      return ++computerScore;
 }
 
 function playGame(){

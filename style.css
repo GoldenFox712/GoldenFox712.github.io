@@ -6,10 +6,10 @@
 }
 
 .score-board{
-    font-size: 22px;
+    font-size: 28px;
     display: flex;
     flex-direction: column;
-    
+    text-align: center;
     
 }
 
@@ -17,5 +17,32 @@
     height:100px;
     width:300px;
     background-color: rgb(201, 248, 248);
-    font-size: 28px;
+    font-size: 32px;
+}
+
+.victory-style{
+    font-size: 40px;
+    color: crimson;
+    border-style: dashed;
+    text-align: center;
+    border-color: blue;
+}
+
+.defeat-style{
+    font-size: 40px;
+}
+
+.result{
+      
+    display: flex;
+    justify-content: center;
+}
+
+.heading{
+    text-align: center;
+}
+
+.text{
+    text-align: center;
+    font-size: 20px;
 }
