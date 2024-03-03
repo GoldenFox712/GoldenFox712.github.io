@@ -20,6 +20,8 @@ let getPlayerChoice = function(choice){
   playRound()
   playerScoreBoard.textContent = playerScore
   computerScoreBoard.textContent = computerScore
+  playerDecision.textContent = playerChoice 
+  computerDecision.textContent = computerChoice
   checkScore()
 }
 
@@ -28,6 +30,10 @@ const paperButton = document.getElementById("paper")
 const scissorsButton = document.getElementById("scissors")
 
 const resultMessage = document.querySelector("#result-message")
+
+const playerDecision = document.querySelector("#player-choice")
+const computerDecision = document.querySelector("#computer-choice")
+
 
 const playerScoreBoard = document.querySelector("#player-score")
 const computerScoreBoard = document.querySelector("#computer-score")
